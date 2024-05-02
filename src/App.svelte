@@ -14,53 +14,60 @@
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<button on:click={updateLocaArr}>위치</button>
+	<div class="contents">
+		<h1>Hello {name}!</h1>
+		<button on:click={updateLocaArr}>위치</button>
 
-	{#if locaArr[0].length >0}
-		<div class="loca">
-			<h2>달맞이길<h2>
-			{#each locaArr[0] as senior, i}
-				<li>{i + 1} : {senior}</li>
-			{/each}			
-		</div>	
-	{/if}
-	{#if locaArr[1].length >0}
-		<div class="loca">
-			<h2>부산시민공원<h2>
-			{#each locaArr[1] as senior, i}
-				<li>{i + 1} : {senior}</li>
-			{/each}	
-		</div>
-	{/if}
-	{#if locaArr[2].length >0}
-		<div class="loca">
-			<h2>민락수변공원<h2>
-			{#each locaArr[2] as senior, i}
-				<li>{i + 1} : {senior}</li>
-			{/each}	
-		</div>
-	{/if}
-	{#if locaArr[3].length >0}
-		<div class="loca">
-			<h2>구목정공원<h2>
-			{#each locaArr[3] as senior, i}
-				<li>{i + 1} : {senior}</li>
-			{/each}	
-		</div>
-	{/if}
-	{#if locaArr[4].length >0}
-		<div class="loca">
-			<h2>돌고래분수광장<h2>
-			{#each locaArr[4] as senior, i}
-				<li>{i + 1} : {senior}</li>
-			{/each}	
-		</div>
-	{/if}	
+		{#if locaArr[0].length >0}
+			<div class="loca">
+				<h2>달맞이길<h2>
+				{#each locaArr[0] as senior, i}
+					<li>{i + 1} : {senior}</li>
+				{/each}			
+			</div>	
+		{/if}
+		{#if locaArr[1].length >0}
+			<div class="loca">
+				<h2>부산시민공원<h2>
+				{#each locaArr[1] as senior, i}
+					<li>{i + 1} : {senior}</li>
+				{/each}	
+			</div>
+		{/if}
+		{#if locaArr[2].length >0}
+			<div class="loca">
+				<h2>민락수변공원<h2>
+				{#each locaArr[2] as senior, i}
+					<li>{i + 1} : {senior}</li>
+				{/each}	
+			</div>
+		{/if}
+		{#if locaArr[3].length >0}
+			<div class="loca">
+				<h2>구목정공원<h2>
+				{#each locaArr[3] as senior, i}
+					<li>{i + 1} : {senior}</li>
+				{/each}	
+			</div>
+		{/if}
+		{#if locaArr[4].length >0}
+			<div class="loca">
+				<h2>돌고래분수광장<h2>
+				{#each locaArr[4] as senior, i}
+					<li>{i + 1} : {senior}</li>
+				{/each}	
+			</div>
+		{/if}
+	</div>	
 </main>
 
 <style>
 	main {
+		width: 100%;
+		min-height: 100%;
+		background-color: #000000;
+	}
+	.contents {
 		text-align: center;
 		padding: 2em;
 		width: 100%;
@@ -118,7 +125,7 @@
 	}
 
 	@media (min-width: 640px) {
-		main {
+		.contents {
 			max-width: 640px; /* 최대 너비 설정 */
 			padding: 2em 4em; /* 좌우 패딩 추가 */
 		}
