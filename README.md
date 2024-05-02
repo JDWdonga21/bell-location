@@ -1,6 +1,3 @@
-# This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or — if you want a full-fledged app framework — use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
-
----
 # 제로웹_Bell_장소시니어매칭기
 
 ## 프로젝드 시작하기
