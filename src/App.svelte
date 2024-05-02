@@ -38,31 +38,41 @@
 	{#if locaArr[0].length >0}
 		<div>
 			<h2>달맞이길<h2>
-			<p>{locaArr[0]}</p>
+			{#each locaArr[0] as senior, i}
+				<li>{i + 1} : {senior}</li>
+			{/each}			
 		</div>	
 	{/if}
 	{#if locaArr[1].length >0}
 		<div>
 			<h2>부산시민공원<h2>
-			<p>{locaArr[1]}</p>
+			{#each locaArr[1] as senior, i}
+				<li>{i + 1} : {senior}</li>
+			{/each}	
 		</div>
 	{/if}
 	{#if locaArr[2].length >0}
 		<div>
 			<h2>민락수변공원<h2>
-			<p>{locaArr[2]}</p>
+			{#each locaArr[2] as senior, i}
+				<li>{i + 1} : {senior}</li>
+			{/each}	
 		</div>
 	{/if}
 	{#if locaArr[3].length >0}
 		<div>
 			<h2>구목정공원<h2>
-			<p>{locaArr[3]}</p>
+			{#each locaArr[3] as senior, i}
+				<li>{i + 1} : {senior}</li>
+			{/each}	
 		</div>
 	{/if}
 	{#if locaArr[4].length >0}
 		<div>
 			<h2>돌고래분수광장<h2>
-			<p>{locaArr[4]}</p>
+			{#each locaArr[4] as senior, i}
+				<li>{i + 1} : {senior}</li>
+			{/each}	
 		</div>
 	{/if}	
 </main>
@@ -90,7 +100,7 @@
 		font-weight: 900;
 	}
 
-	p {
+	li {
 		color: #ffffff;
 		text-transform: uppercase;
 		font-size: 20px;
