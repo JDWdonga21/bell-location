@@ -1,107 +1,61 @@
 # This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or — if you want a full-fledged app framework — use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
 
 ---
+# 제로웹_Bell_장소시니어매칭기
 
-# svelte app
+## 프로젝드 시작하기
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
+### node 설치
+먼저, Node.js가 설치되어 있어야 합니다. Node.js는 공식 웹사이트에서 다운로드할 수 있습니다.
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
-
+### Svelte 프로젝트 생성
+터미널, 명령어로 Svelte 프로젝트를 생성
 ```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
+npx degit sveltejs/template svelte-typescript-app
+cd svelte-typescript-app
 ```
 
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
-
-
-## Get started
-
-Install the dependencies...
-
-```bash
-cd svelte-app
-npm install
-```
-
-...then start [Rollup](https://rollupjs.org):
-
-```bash
-npm run dev
-```
-
-Navigate to [localhost:8080](http://localhost:8080). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
-
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
-
-If you're using [Visual Studio Code](https://code.visualstudio.com/) we recommend installing the official extension [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode). If you are using other editors you may need to install a plugin in order to get syntax highlighting and intellisense.
-
-## Building and running in production mode
-
-To create an optimised version of the app:
-
-```bash
-npm run build
-```
-
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
-
-
-## Single-page app mode
-
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
-
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
-
-```js
-"start": "sirv public --single"
-```
-
-## Using TypeScript
-
-This template comes with a script to set up a TypeScript development environment, you can run it immediately after cloning the template with:
-
+### TypeScript 설정 추가
+프로젝트 디렉토리에서 TypeScript를 설정
 ```bash
 node scripts/setupTypeScript.js
 ```
 
-Or remove the script via:
-
+### npm을 사용한 의존성 설치
+npm 사용하여 의존성을 설치
 ```bash
-rm scripts/setupTypeScript.js
+npm install
 ```
 
-If you want to use `baseUrl` or `path` aliases within your `tsconfig`, you need to set up `@rollup/plugin-alias` to tell Rollup to resolve the aliases. For more info, see [this StackOverflow question](https://stackoverflow.com/questions/63427935/setup-tsconfig-path-in-svelte).
-
-## Deploying to the web
-
-### With [Vercel](https://vercel.com)
-
-Install `vercel` if you haven't already:
-
+### Yarn을 사용한 의존성 설치
+npm 대신 Yarn을 사용하여 의존성을 설치
 ```bash
-npm install -g vercel
+yarn
 ```
 
-Then, from within your project folder:
-
+### 개발 서버 실행
+Yarn을 사용하여 개발 서버를 실행
 ```bash
-cd public
-vercel deploy --name my-project
+yarn dev
+```
+npm을 사용한 경우
+```bash
+npm run dev
+```
+localhost:5000에서 개발 서버를 확인할 수 있습니다.
+
+### TypeScript 사용
+Svelte 컴포넌트에서 TypeScript를 사용하려면, 스크립트 태그에 lang="ts" 속성을 추가합니다.
+```bash
+<script lang="ts">
+  let name: string = 'Hello';
+</script>
 ```
 
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
+### 프로젝트 빌드
+프로젝트를 빌드할 때는 다음 명령어를 사용합니다
 ```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
+yarn build
+or
 npm run build
-surge public my-project.surge.sh
 ```
