@@ -1,6 +1,35 @@
 <script lang="ts">
 	export let name: string;
 	import { generateRandomPairs } from './randomPairs';
+	import { fade } from 'svelte/transition';
+	/**
+	 * bind : this
+	 */
+	 import { onMount } from 'svelte';
+
+	// 캔버스 요소를 담을 변수 선언
+	let canvasElement: HTMLCanvasElement;
+
+	// 캔버스에 그리는 함수
+	function drawStuff(ctx: CanvasRenderingContext2D) {
+		if (!ctx) return;
+
+		// 예시: 간단한 사각형 그리기
+		ctx.fillStyle = 'blue';
+		ctx.fillRect(10, 0, 200, 300);
+	}
+
+	// 컴포넌트가 마운트된 이후 안전하게 DOM과 상호작용
+	onMount(() => {
+	const ctx = canvasElement.getContext('2d');
+	if (ctx) {
+		drawStuff(ctx);
+	} else {
+		console.error('2D 컨텍스트를 가져올 수 없습니다.');
+	}
+	});
+	// 
+  	let messages = '안녕하세요!';
 	let message = 'Hello';
 	function updateMessage() {
 		message = 'Hello, World!';
@@ -16,6 +45,13 @@
 <main>
 	<div class="contents">
 		<h1>Hello {name}!</h1>
+		<input type="text" bind:value={messages} placeholder="메시지를 입력하세요">
+
+		{#key messages}
+			<div class="keyTransition" in:fade={{ delay: 250, duration: 400 }}>
+				{messages}
+			</div>
+		{/key}
 		<button on:click={updateLocaArr}>위치</button>
 
 		{#if locaArr[0].length >0}
@@ -58,6 +94,7 @@
 				{/each}	
 			</div>
 		{/if}
+		<canvas bind:this={canvasElement} width="500" height="500"></canvas>
 	</div>	
 </main>
 
@@ -98,6 +135,14 @@
 		font-size: 1.6em; /* 글자 크기 줄임 */
 		font-weight: 700;
 		margin-bottom: 0.3em;
+	}
+
+	.keyTransition {
+		color: #ffffff;
+		font-size: 1.6em; /* 글자 크기 줄임 */
+		font-weight: 700;
+		margin-bottom: 0.3em;
+		height: 1.6em;
 	}
 
 	button {
